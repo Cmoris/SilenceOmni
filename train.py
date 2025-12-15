@@ -94,6 +94,7 @@ def train():
     config = AutoConfig.from_pretrained(model_args.pretrained_model_name_or_path)
     model = Qwen2_5OmniThinkerForConditionalGeneration.from_pretrained(
         model_args.pretrained_model_name_or_path, 
+        config=config,
         dtype=compute_dtype,
         do_sample=True,
         **bnb_model_from_pretrained_args
